@@ -78,7 +78,7 @@ public abstract class BaseViewerActivity extends Activity implements DecodingPro
 //					paint.setColor(Color.RED);
 //					paint.setTextSize(30);
 //				}
-//				canvas.drawText("½ö²âÊÔÓÃ", 20, 50, paint);
+//				canvas.drawText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 20, 50, paint);
 //			}
 //		});
 		frontView=new FrontView(BaseViewerActivity.this, documentView);
@@ -241,7 +241,7 @@ public abstract class BaseViewerActivity extends Activity implements DecodingPro
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-    	menu.add(0, MENU_EXIT, 0, "ÍË³öË¼¿ÆĞÂºÏ×÷»ï°éÈëÃÅÖ¸µ¼ÊÖ²á");
+    	menu.add(0, MENU_EXIT, 0, "é€€å‡ºæ€ç§‘æ–°åˆä½œä¼™ä¼´å…¥é—¨æŒ‡å¯¼æ‰‹å†Œ");
 //        menu.add(0, MENU_GOTO, 0, "Go to page");
 //        final MenuItem menuItem = menu.add(0, MENU_FULL_SCREEN, 0, "Full screen").setCheckable(true).setChecked(viewerPreferences.isFullScreen());
 //        setFullScreenMenuItemText(menuItem);
@@ -256,13 +256,13 @@ public abstract class BaseViewerActivity extends Activity implements DecodingPro
     @Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-			new AlertDialog.Builder(this).setTitle("Ë¼¿ÆĞÂºÏ×÷»ï°éÈëÃÅÖ¸µ¼ÊÖ²á")
-					.setMessage("ÊÇ·ñÍË³ö£¿")
-					.setPositiveButton("È·¶¨", new OnClickListener() {
+			new AlertDialog.Builder(this).setTitle("æ€ç§‘æ–°åˆä½œä¼™ä¼´å…¥é—¨æŒ‡å¯¼æ‰‹å†Œ")
+					.setMessage("æ˜¯å¦é€€å‡ºï¼Ÿ")
+					.setPositiveButton("ç¡®å®š", new OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
 							System.exit(0);
 						}
-					}).setNegativeButton("È¡Ïû", new OnClickListener() {
+					}).setNegativeButton("å–æ¶ˆ", new OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
 						}
 					}).create().show();

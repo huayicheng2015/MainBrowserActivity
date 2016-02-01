@@ -94,8 +94,8 @@ public abstract class BaseBrowserActivity extends Activity
 		final File f = new File(getMyPath(), getFileName() + ".pdf");
 
 		if (!f.exists()) {
-			final ProgressDialog mydialog = ProgressDialog.show(this, "¼ÓÔØÖĞ...",
-					"ÕıÔÚ¸´ÖÆÎÄ¼ş...", true);
+			final ProgressDialog mydialog = ProgressDialog.show(this, "åŠ è½½ä¸­...",
+					"æ­£åœ¨å¤åˆ¶æ–‡ä»¶...", true);
 			new Thread() {
 				public void run() {
 					try {
@@ -118,15 +118,15 @@ public abstract class BaseBrowserActivity extends Activity
     static public String getMyPath(){ 
         File sdDir = null; 
         boolean sdCardExist = Environment.getExternalStorageState()   
-                            .equals(Environment.MEDIA_MOUNTED);   //ÅĞ¶Ïsd¿¨ÊÇ·ñ´æÔÚ 
+                            .equals(Environment.MEDIA_MOUNTED);   //åˆ¤æ–­sdå¡æ˜¯å¦å­˜åœ¨
         if   (sdCardExist)   
         {                               
-          sdDir = Environment.getExternalStorageDirectory();//»ñÈ¡¸úÄ¿Â¼ 
+          sdDir = Environment.getExternalStorageDirectory();//è·å–æ ¹ç›®å½•
        }   
-        return sdDir.toString()+"/myvudroid"; 
+        return sdDir.toString()+"";
  }
     static public String getFileName(){
-    	return "temp_20130226";
+    	return "git-cheatsheet";
     }
     @Override
     protected void onPostCreate(Bundle savedInstanceState)

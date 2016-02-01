@@ -53,9 +53,9 @@ public class FrontView extends HorizontalScrollView implements OnClickListener{
 		final int size=documentView.pages.size();
 		final ProgressDialog mpDialog=new ProgressDialog(context);
 		mpDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);  
-        mpDialog.setTitle("ÌáÊ¾");  
+        mpDialog.setTitle("æç¤º");
         mpDialog.setIcon(R.drawable.icon);
-        mpDialog.setMessage("ÕıÔÚÉú³ÉËõÂÔÍ¼...");  
+        mpDialog.setMessage("æ­£åœ¨ç”Ÿæˆç¼©ç•¥å›¾...");
         mpDialog.setMax(size);  
         mpDialog.setProgress(0);  
         mpDialog.setIndeterminate(false);
@@ -140,16 +140,22 @@ public class FrontView extends HorizontalScrollView implements OnClickListener{
 	}
 	public void clearAllButtonBackground(){
 		LinearLayout ll=(LinearLayout) getChildAt(0);
+		View view;
 		for(int i=0;i<34;i++){
-			ll.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
+			view = ll.getChildAt(i);
+			if (view == null) continue;
+			view.setBackgroundColor(Color.TRANSPARENT);
 		}
 	}
 	public void changeToButton(int lastPage,int page){
 		LinearLayout ll=(LinearLayout) getChildAt(0);
+		View view;
 		for(int i=0;i<34;i++){
-			ll.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
+			view = ll.getChildAt(i);
+			if (view == null) continue;
+			view.setBackgroundColor(Color.TRANSPARENT);
 			if(i==page){
-				ll.getChildAt(i).setBackgroundColor(myColor);
+				view.setBackgroundColor(myColor);
 				scrollToButton(page);
 			}
 		}
