@@ -14,7 +14,7 @@
 
     <application
         android:icon="@drawable/icon"
-        android:label="思科新合作伙伴入门指导手册" >
+        android:label="@string/app_label" >
         <activity
             android:name="org.vudroid.pdfdroid.PdfViewerActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -41,7 +41,7 @@
         </activity>
         <activity
             android:name="org.vudroid.core.MainBrowserActivity"
-            android:label="思科新合作伙伴入门指导手册"
+            android:label="@string/app_label"
             android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

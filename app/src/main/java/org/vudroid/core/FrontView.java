@@ -53,9 +53,9 @@ public class FrontView extends HorizontalScrollView implements OnClickListener{
 		final int size=documentView.pages.size();
 		final ProgressDialog mpDialog=new ProgressDialog(context);
 		mpDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);  
-        mpDialog.setTitle("提示");
+        mpDialog.setTitle(R.string.browser_prompt_text);
         mpDialog.setIcon(R.drawable.icon);
-        mpDialog.setMessage("正在生成缩略图...");
+        mpDialog.setMessage(context.getString(R.string.browser_generating_bitmap));
         mpDialog.setMax(size);  
         mpDialog.setProgress(0);  
         mpDialog.setIndeterminate(false);

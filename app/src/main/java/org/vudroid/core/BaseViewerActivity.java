@@ -24,6 +24,8 @@ import org.vudroid.core.models.DecodingProgressModel;
 import org.vudroid.core.models.ZoomModel;
 import org.vudroid.core.views.PageViewZoomControls;
 
+import cn.com.cisco.pdf.R;
+
 public abstract class BaseViewerActivity extends Activity implements DecodingProgressListener, CurrentPageListener
 {
     private static final int MENU_EXIT = 0;
@@ -122,7 +124,7 @@ public abstract class BaseViewerActivity extends Activity implements DecodingPro
         setFullScreen();
         setContentView(frameLayout);
 
-        final SharedPreferences sharedPreferences = getSharedPreferences(DOCUMENT_VIEW_STATE_PREFERENCES, 0);
+//        final SharedPreferences sharedPreferences = getSharedPreferences(DOCUMENT_VIEW_STATE_PREFERENCES, MODE_PRIVATE);
         documentView.goToPage(0);
         documentView.showDocument();
 
@@ -149,7 +151,7 @@ public abstract class BaseViewerActivity extends Activity implements DecodingPro
         }
         else
         {
-            pageNumberToast = Toast.makeText(this, pageText, 300);
+            pageNumberToast = Toast.makeText(this, pageText, Toast.LENGTH_LONG);
         }
         pageNumberToast.setGravity(Gravity.TOP | Gravity.LEFT,0,0);
         pageNumberToast.show();
@@ -232,7 +234,7 @@ public abstract class BaseViewerActivity extends Activity implements DecodingPro
 
     private void saveCurrentPage()
     {
-        final SharedPreferences sharedPreferences = getSharedPreferences(DOCUMENT_VIEW_STATE_PREFERENCES, 0);
+        final SharedPreferences sharedPreferences = getSharedPreferences(DOCUMENT_VIEW_STATE_PREFERENCES, MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(getIntent().getData().toString(), documentView.getCurrentPage());
         editor.commit();
@@ -241,7 +243,7 @@ public abstract class BaseViewerActivity extends Activity implements DecodingPro
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-    	menu.add(0, MENU_EXIT, 0, "退出思科新合作伙伴入门指导手册");
+    	menu.add(0, MENU_EXIT, 0, getString(R.string.app_label));
 //        menu.add(0, MENU_GOTO, 0, "Go to page");
 //        final MenuItem menuItem = menu.add(0, MENU_FULL_SCREEN, 0, "Full screen").setCheckable(true).setChecked(viewerPreferences.isFullScreen());
 //        setFullScreenMenuItemText(menuItem);
@@ -256,13 +258,13 @@ public abstract class BaseViewerActivity extends Activity implements DecodingPro
     @Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-			new AlertDialog.Builder(this).setTitle("思科新合作伙伴入门指导手册")
-					.setMessage("是否退出？")
-					.setPositiveButton("确定", new OnClickListener() {
+			new AlertDialog.Builder(this).setTitle(R.string.app_label)
+					.setMessage(R.string.browser_is_exit)
+					.setPositiveButton(R.string.browser_confirm_text, new OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
 							System.exit(0);
 						}
-					}).setNegativeButton("取消", new OnClickListener() {
+					}).setNegativeButton(R.string.browser_cancel_text, new OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
 						}
 					}).create().show();

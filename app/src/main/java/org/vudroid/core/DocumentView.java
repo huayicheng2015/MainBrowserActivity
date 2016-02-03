@@ -581,7 +581,7 @@ public class DocumentView extends View implements ZoomListener {
     	Intent intent = new Intent();
     	intent.setData(Uri.parse(sUrl));
     	intent.setAction(Intent.ACTION_VIEW);
-    	context.startActivity(intent); //Æô¶¯ä¯ÀÀÆ÷
+    	context.startActivity(intent); //å¯åŠ¨æµè§ˆå™¨
     	return true;
     }
     @Override
@@ -596,8 +596,8 @@ public class DocumentView extends View implements ZoomListener {
             if (multiTouchZoom.isResetLastPointAfterZoom()) {
                 setLastPosition(ev);
                 multiTouchZoom.setResetLastPointAfterZoom(false);
-            	isMove=true;//²»´¦ÀíMotionEvent.ACTION_UPÊÂ¼ş
-            }
+            	isMove=true;//ä¸å¤„ç†MotionEvent.ACTION_UPäº‹ä»¶
+			}
         }
 
         if (velocityTracker == null) {
@@ -618,7 +618,7 @@ public class DocumentView extends View implements ZoomListener {
                 isMove=false;
                 
 //                Log.d("fax", "getScrollX:"+ getScrollX()+ ",getScrollY:"+ getScrollY()+", getCurrentPage:"+getCurrentPage()+ ", getNowPageTop:"+pages.get(getCurrentPage()).getTop());
-//                Log.d("fax", "getAspectRatio:"+pages.get(0).getAspectRatio()+"£¬ getZoom:"+zoomModel.getZoom());
+//                Log.d("fax", "getAspectRatio:"+pages.get(0).getAspectRatio()+"ï¿½ï¿½ getZoom:"+zoomModel.getZoom());
                 break;
             case MotionEvent.ACTION_MOVE:
 			if (Math.abs(lastX - ev.getX())<20&&Math.abs(lastY - ev.getY())<20) return true;

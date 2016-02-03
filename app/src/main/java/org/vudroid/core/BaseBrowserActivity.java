@@ -94,8 +94,8 @@ public abstract class BaseBrowserActivity extends Activity
 		final File f = new File(getMyPath(), getFileName() + ".pdf");
 
 		if (!f.exists()) {
-			final ProgressDialog mydialog = ProgressDialog.show(this, "加载中...",
-					"正在复制文件...", true);
+			final ProgressDialog mydialog = ProgressDialog.show(this, getString(R.string.browser_loading),
+                    getString(R.string.browser_coping), true);
 			new Thread() {
 				public void run() {
 					try {

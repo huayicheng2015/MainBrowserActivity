@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">思科新合作伙伴入门指导手册</string>
+    <string name="browser_loading">加载中...</string>
+    <string name="browser_coping">正在复制文件...</string>
+    <string name="browser_generating_bitmap">正在生成缩略图&#8230;</string>
+    <string name="browser_is_exit">是否退出？</string>
+    <string name="browser_confirm_text">确定</string>
+    <string name="browser_cancel_text">取消</string>
+    <string name="browser_prompt_text">提示</string>
+</resources>
